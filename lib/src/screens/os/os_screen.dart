@@ -231,7 +231,7 @@ class _OsPageState extends State<OsPage> {
                                           const Align(
                                               alignment: Alignment.bottomLeft,
                                               child: Icon(
-                                                Icons.call_sharp,
+                                                Icons.calendar_month_outlined,
                                                 color: Colors.black,
                                               )),
                                           Text(
