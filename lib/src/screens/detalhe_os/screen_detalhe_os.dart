@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
 import '../../models/os_response/os_response.dart';
 import '../../services/api/api.dart';
 
@@ -74,7 +74,7 @@ class _DetalheOsState extends State<DetalheOs> {
                               decoration: const BoxDecoration(
                                 color: Colors.redAccent,
                               ),
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                              padding: const EdgeInsets.fromLTRB(1, 3, 10, 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -99,7 +99,7 @@ class _DetalheOsState extends State<DetalheOs> {
                               decoration: const BoxDecoration(
                                 color: Colors.redAccent,
                               ),
-                              padding: const EdgeInsets.fromLTRB(1, 10, 13, 20),
+                              padding: const EdgeInsets.fromLTRB(1, 10, 13, 10),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -189,15 +189,13 @@ class _DetalheOsState extends State<DetalheOs> {
                                   ),
                                 ],
                               ),
-                              padding:
-                                  const EdgeInsets.fromLTRB(40, 10, 40, 10),
+                              padding: const EdgeInsets.fromLTRB(30, 1, 30, 1),
                             ),
                             Container(
                               decoration: const BoxDecoration(
                                 color: Color.fromARGB(255, 196, 196, 196),
                               ),
-                              padding:
-                                  const EdgeInsets.fromLTRB(10, 100, 10, 10),
+                              padding: const EdgeInsets.fromLTRB(15, 75, 1, 1),
                             ),
                             const SizedBox(
                               height: 10,
@@ -206,7 +204,7 @@ class _DetalheOsState extends State<DetalheOs> {
                               decoration: const BoxDecoration(
                                 color: Colors.white70,
                               ),
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                              padding: const EdgeInsets.fromLTRB(15, 5, 10, 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -215,17 +213,19 @@ class _DetalheOsState extends State<DetalheOs> {
                                   Text(
                                     detalheOs![index].nome ?? '',
                                     style: const TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 13,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
                             ),
                             const SizedBox(height: 24),
-                            const Divider(color: Colors.black),
-                            const SizedBox(height: 24),
+                            const Divider(
+                              color: Colors.black,
+                              height: 10,
+                            ),
                             SizedBox(
-                              height: 20,
+                              height: 15,
                               child: Row(
                                 children: const [
                                   Text('ENDEREÇO: ',
@@ -239,23 +239,23 @@ class _DetalheOsState extends State<DetalheOs> {
                               decoration: const BoxDecoration(
                                 color: Colors.white70,
                               ),
-                              padding: const EdgeInsets.fromLTRB(1, 5, 1, 5),
+                              padding: const EdgeInsets.fromLTRB(15, 5, 1, 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    detalheOs![index].logradouro ?? '',
+                                    '${detalheOs![index].tipoLogradouro ?? ''} ${detalheOs![index].logradouro ?? ''}, ${detalheOs![index].numero ?? ''}, ${detalheOs![index].complemento ?? ''}, ${detalheOs![index].bairro ?? ''}, ${detalheOs![index].cidade ?? ''} - ${detalheOs![index].estado ?? ''}',
                                     style: const TextStyle(
-                                      fontSize: 13,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                             SizedBox(
-                              height: 30,
+                              height: 25,
                               child: Row(
                                 children: const [
                                   Text('TELEFONE: ',
@@ -269,7 +269,7 @@ class _DetalheOsState extends State<DetalheOs> {
                               decoration: const BoxDecoration(
                                 color: Colors.white70,
                               ),
-                              padding: const EdgeInsets.fromLTRB(1, 5, 1, 5),
+                              padding: const EdgeInsets.fromLTRB(15, 5, 1, 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -285,7 +285,7 @@ class _DetalheOsState extends State<DetalheOs> {
                               ),
                             ),
                             SizedBox(
-                              height: 29,
+                              height: 25,
                               child: Row(
                                 children: const [
                                   Text('E-MAIL: ',
@@ -300,7 +300,7 @@ class _DetalheOsState extends State<DetalheOs> {
                                 color: Colors.white,
                               ),
                               padding:
-                                  const EdgeInsets.fromLTRB(1, 6.99, 10, 1),
+                                  const EdgeInsets.fromLTRB(15, 6.99, 10, 1),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -315,10 +315,13 @@ class _DetalheOsState extends State<DetalheOs> {
                                 ],
                               ),
                             ),
-                            const SizedBox(height: 30),
-                            const Divider(color: Colors.black),
+                            const SizedBox(height: 24),
+                            const Divider(
+                              color: Colors.black,
+                              height: 10,
+                            ),
                             SizedBox(
-                              height: 29,
+                              height: 30,
                               child: Row(
                                 children: const [
                                   Text('DESCRIÇÃO: ',
@@ -330,19 +333,81 @@ class _DetalheOsState extends State<DetalheOs> {
                             ),
                             Container(
                               decoration: const BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.white70,
                               ),
-                              padding:
-                                  const EdgeInsets.fromLTRB(1, 6.99, 10, 1),
+                              padding: const EdgeInsets.fromLTRB(15, 5, 1, 5),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
+                                    detalheOs![index].descricao ?? '',
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                              child: Row(
+                                children: const [
+                                  Text('SENHA INSTALADOR: ',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: const BoxDecoration(
+                                color: Colors.white70,
+                              ),
+                              padding: const EdgeInsets.fromLTRB(15, 5, 1, 5),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    detalheOs![index].idParceiro.toString(),
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 21),
+                            const Divider(color: Colors.black),
+                            SizedBox(
+                              height: 29,
+                              child: Row(
+                                children: const [
+                                  Text('OBSERVAÇÃO: ',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold)),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                              ),
+                              padding:
+                                  const EdgeInsets.fromLTRB(15, 6.99, 10, 1),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  AutoSizeText(
                                     detalheOs![index].observacao ?? '',
                                     style: const TextStyle(
-                                      fontSize: 11,
+                                      fontSize: 10,
                                     ),
                                   ),
                                 ],

@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.2.2
   http: ^0.13.4
   json_serializable: ^6.2.0
+  auto_size_text: ^3.0.0
 
   
   

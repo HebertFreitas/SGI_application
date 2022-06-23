@@ -160,7 +160,7 @@ class _OsPageState extends State<OsPage> {
                                                 color: Colors.black,
                                               )),
                                           Text(
-                                            listaOs![index].logradouro ?? '',
+                                            '${listaOs![index].tipoLogradouro ?? ''} ${listaOs![index].logradouro ?? ''}, ${listaOs![index].numero ?? ''}, ${listaOs![index].complemento ?? ''}, ${listaOs![index].bairro ?? ''}, ${listaOs![index].cidade ?? ''} - ${listaOs![index].estado ?? ''}',
                                             style:
                                                 const TextStyle(fontSize: 10),
                                           ),
