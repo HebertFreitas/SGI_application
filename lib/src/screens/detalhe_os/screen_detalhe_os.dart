@@ -342,7 +342,7 @@ class _DetalheOsState extends State<DetalheOs> {
                                   Text(
                                     detalheOs![index].observacao ?? '',
                                     style: const TextStyle(
-                                      fontSize: 10,
+                                      fontSize: 11,
                                     ),
                                   ),
                                 ],
