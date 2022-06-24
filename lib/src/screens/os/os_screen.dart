@@ -82,10 +82,10 @@ class _OsPageState extends State<OsPage> {
                                     MaterialPageRoute(
                                       settings: RouteSettings(
                                           arguments: listaOs![index]),
-                                      builder: (context) => const DetalheOs(),
+                                      builder: (context) =>
+                                          DetalheOs(detalheOs: listaOs![index]),
                                     ),
                                   );
-                                  // Function is executed on tap.
                                 },
                                 child: Column(
                                   children: <Widget>[
